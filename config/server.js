@@ -5,5 +5,10 @@ module.exports = ({ env }) => ({
     keys: env.array('APP_KEYS'),
   },
   url: env('URL'),
-  proxy: true
+  proxy: true,
+  logger: {
+    updates: {
+      enabled: false,
+    },
+  },
 });
