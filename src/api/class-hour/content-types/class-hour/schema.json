@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "class_hours",
+  "info": {
+    "singularName": "class-hour",
+    "pluralName": "class-hours",
+    "displayName": "class-hour"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::student.student",
+      "inversedBy": "class_hours"
+    },
+    "subject": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subject.subject",
+      "inversedBy": "class_hours"
+    },
+    "totalCounts": {
+      "type": "integer",
+      "min": 1
+    },
+    "usedCounts": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "purchaseDate": {
+      "type": "date"
+    },
+    "unitPrice": {
+      "type": "decimal"
+    },
+    "totalAmount": {
+      "type": "decimal"
+    },
+    "classhoursStatus": {
+      "type": "enumeration",
+      "default": "active",
+      "enum": [
+        "active",
+        "expired",
+        "exhausted",
+        "refunded"
+      ]
+    },
+    "paymentMethod": {
+      "type": "enumeration",
+      "default": "transfer",
+      "enum": [
+        "cash",
+        "transfer",
+        "others"
+      ]
+    },
+    "notes": {
+      "type": "text"
+    },
+    "giftCounts": {
+      "type": "integer"
+    },
+    "schedules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::schedule.schedule",
+      "mappedBy": "classHour"
+    }
+  }
+}

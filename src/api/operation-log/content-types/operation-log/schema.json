@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "operation_logs",
+  "info": {
+    "singularName": "operation-log",
+    "pluralName": "operation-logs",
+    "displayName": "operation-log"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "operation_logs"
+    },
+    "action": {
+      "type": "enumeration",
+      "enum": [
+        "create",
+        "update",
+        "delete",
+        "login",
+        "logout",
+        "schedule",
+        "cancel",
+        "complete"
+      ]
+    },
+    "targetType": {
+      "type": "enumeration",
+      "enum": [
+        "student",
+        "teacher",
+        "classroom",
+        "schedule",
+        "class-hour",
+        "user",
+        "subject",
+        "grade"
+      ]
+    },
+    "targetId": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "oldData": {
+      "type": "json"
+    },
+    "newData": {
+      "type": "json"
+    },
+    "ipAddress": {
+      "type": "string"
+    },
+    "userAgent": {
+      "type": "string"
+    }
+  }
+}

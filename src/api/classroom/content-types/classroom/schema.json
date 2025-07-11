@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classrooms",
+  "info": {
+    "singularName": "classroom",
+    "pluralName": "classrooms",
+    "displayName": "classroom"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "capacity": {
+      "type": "integer",
+      "default": 1
+    },
+    "description": {
+      "type": "text"
+    },
+    "location": {
+      "type": "string"
+    },
+    "classroomStatus": {
+      "type": "enumeration",
+      "required": false,
+      "default": "available",
+      "enum": [
+        "available",
+        "maintenance",
+        "occupied"
+      ]
+    },
+    "schedules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::schedule.schedule",
+      "mappedBy": "classroom"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schedules",
+  "info": {
+    "singularName": "schedule",
+    "pluralName": "schedules",
+    "displayName": "schedule"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::student.student",
+      "inversedBy": "schedules"
+    },
+    "teacher": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::teacher.teacher",
+      "inversedBy": "schedules"
+    },
+    "classroom": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::classroom.classroom",
+      "inversedBy": "schedules"
+    },
+    "subject": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subject.subject",
+      "inversedBy": "schedules"
+    },
+    "startTime": {
+      "type": "datetime"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "scheduleStatus": {
+      "type": "enumeration",
+      "default": "scheduled",
+      "enum": [
+        "scheduled",
+        "completed",
+        "cancelled",
+        "absent",
+        "makeup"
+      ]
+    },
+    "notes": {
+      "type": "text"
+    },
+    "classHour": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class-hour.class-hour",
+      "inversedBy": "schedules"
+    },
+    "isGifted": {
+      "type": "boolean"
+    }
+  }
+}
