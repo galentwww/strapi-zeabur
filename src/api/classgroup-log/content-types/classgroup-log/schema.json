@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classgroup_logs",
+  "info": {
+    "singularName": "classgroup-log",
+    "pluralName": "classgroup-logs",
+    "displayName": "classgroup-log"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "students": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student.student",
+      "mappedBy": "classgroup_log"
+    },
+    "description": {
+      "type": "text"
+    },
+    "class_group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class-group.class-group",
+      "inversedBy": "classgroup_logs"
+    },
+    "schedule": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::schedule.schedule"
+    }
+  }
+}

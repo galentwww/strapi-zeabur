@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "changelogs",
+  "info": {
+    "singularName": "changelog",
+    "pluralName": "changelogs",
+    "displayName": "changelog"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

@@ -40,7 +40,9 @@
         "class-hour",
         "user",
         "subject",
-        "grade"
+        "grade",
+        "class-group",
+        "classgroup-log"
       ]
     },
     "targetId": {

@@ -17,9 +17,6 @@
     "description": {
       "type": "text"
     },
-    "hourlyRate": {
-      "type": "decimal"
-    },
     "teachers": {
       "type": "relation",
       "relation": "manyToMany",
@@ -36,6 +33,21 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::schedule.schedule",
+      "mappedBy": "subject"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::student.student",
+      "mappedBy": "subject_combinations"
+    },
+    "isOptional": {
+      "type": "boolean"
+    },
+    "class_groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class-group.class-group",
       "mappedBy": "subject"
     }
   }

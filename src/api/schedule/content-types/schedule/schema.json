@@ -49,6 +49,8 @@
         "completed",
         "cancelled",
         "absent",
+        "teacher_leave",
+        "school_conflict",
         "makeup"
       ]
     },
@@ -63,6 +65,19 @@
     },
     "isGifted": {
       "type": "boolean"
+    },
+    "class_group": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class-group.class-group",
+      "inversedBy": "schedules"
+    },
+    "courseType": {
+      "type": "enumeration",
+      "enum": [
+        "one_to_one",
+        "group_class"
+      ]
     }
   }
 }

@@ -19,9 +19,9 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
     },
-    "grade": {
+    "grades": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::grade.grade",
       "inversedBy": "teachers"
     },
@@ -41,13 +41,20 @@
       "enum": [
         "active",
         "inactive",
-        "on_leave"
+        "suspended",
+        "resigned"
       ]
     },
     "schedules": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::schedule.schedule",
+      "mappedBy": "teacher"
+    },
+    "class_groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class-group.class-group",
       "mappedBy": "teacher"
     }
   }

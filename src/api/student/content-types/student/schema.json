@@ -57,6 +57,24 @@
     },
     "description": {
       "type": "text"
+    },
+    "enrollmentYear": {
+      "type": "integer"
+    },
+    "attendSchool": {
+      "type": "string"
+    },
+    "subject_combinations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subject.subject",
+      "inversedBy": "students"
+    },
+    "classgroup_log": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::classgroup-log.classgroup-log",
+      "inversedBy": "students"
     }
   }
 }

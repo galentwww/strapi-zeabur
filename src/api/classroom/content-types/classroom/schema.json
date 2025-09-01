@@ -39,6 +39,9 @@
       "relation": "oneToMany",
       "target": "api::schedule.schedule",
       "mappedBy": "classroom"
+    },
+    "isUnlimited": {
+      "type": "boolean"
     }
   }
 }

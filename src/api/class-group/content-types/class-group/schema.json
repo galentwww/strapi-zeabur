@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "class_groups",
+  "info": {
+    "singularName": "class-group",
+    "pluralName": "class-groups",
+    "displayName": "class-group"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "maxStudents": {
+      "type": "integer"
+    },
+    "currentStudents": {
+      "type": "integer"
+    },
+    "classGroupStatus": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "full",
+        "closed",
+        "suspended"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "subject": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subject.subject",
+      "inversedBy": "class_groups"
+    },
+    "teacher": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::teacher.teacher",
+      "inversedBy": "class_groups"
+    },
+    "schedules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::schedule.schedule",
+      "mappedBy": "class_group"
+    },
+    "unitPrice": {
+      "type": "decimal"
+    },
+    "classgroup_logs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::classgroup-log.classgroup-log",
+      "mappedBy": "class_group"
+    }
+  }
+}

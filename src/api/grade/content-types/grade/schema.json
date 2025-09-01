@@ -18,7 +18,8 @@
       "type": "enumeration",
       "enum": [
         "junior_high",
-        "senior_high"
+        "senior_high",
+        "elementary"
       ]
     },
     "description": {
@@ -32,9 +33,9 @@
     },
     "teachers": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::teacher.teacher",
-      "mappedBy": "grade"
+      "mappedBy": "grades"
     }
   }
 }

@@ -57,6 +57,8 @@
       "enum": [
         "cash",
         "transfer",
+        "alipay",
+        "scheduled",
         "others"
       ]
     },
@@ -71,6 +73,15 @@
       "relation": "oneToMany",
       "target": "api::schedule.schedule",
       "mappedBy": "classHour"
+    },
+    "name": {
+      "type": "string"
+    },
+    "actualPrice": {
+      "type": "decimal"
+    },
+    "refundAmount": {
+      "type": "decimal"
     }
   }
 }
